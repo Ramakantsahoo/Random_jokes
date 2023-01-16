@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded',getJoke);
 button.addEventListener('click',getJoke);
 
 async function getJoke(){
-    const jokeData = await fetch('https://icanhazdadjoke.com',{
+    const jokeData = await fetch('https://official-joke-api.appspot.com/random_joke',{
         headers: {
             'Accept': 'application/json'
         }
