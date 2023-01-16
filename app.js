@@ -1,16 +1,16 @@
 const button = document.querySelector('.container button');
 const jokeText = document.querySelector('.container p');
-document.addEventListener('DOMContentLoaded',getJoke);
+document.addEventListener('DOMContentLoaded', getJoke);
 
-button.addEventListener('click',getJoke);
+button.addEventListener('click', getJoke);
 
-async function getJoke(){
-    const jokeData = await fetch('https://official-joke-api.appspot.com/random_joke',{
+async function getJoke() {
+    const jokeData = await fetch('https://official-joke-api.appspot.com/random_joke', {
         headers: {
             'Accept': 'application/json'
         }
     });
-    const jokeObj= await jokeData.json();
+    const jokeObj = await jokeData.json();
     // console.log(jokeObj.joke);
-    jokeText.innerHTML= jokeObj.joke;
+    jokeText.innerHTML = `${jokeObj.setup} <br/> ${jokeObj.punchline}`;
 }
